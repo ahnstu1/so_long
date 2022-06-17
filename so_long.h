@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 04:03:42 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/16 05:23:27 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/17 23:07:23 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ typedef struct s_info
     void    *img_clt;
     void    *img_wal;
     void    *img_bcg;
+    int     map_ply;
+    int     map_clt;
     int     map_y;
     int     map_x;
+    char    *map_info;
 
 }   t_info;
 
