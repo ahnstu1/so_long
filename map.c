@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 02:31:32 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/20 03:04:25 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 03:19:32 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*map_read(t_info *info, int fd)
 		info -> map_y++;
 		tmp = map;
 		map = ft_strjoin(map, line);
+        free(line);
 		free(tmp);
 	}
 	info -> map_x = (ft_strlen(map) + 1) / info -> map_y - 1;
