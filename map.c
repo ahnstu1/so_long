@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 02:31:32 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/20 03:19:32 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 04:06:44 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*map_read(t_info *info, int fd)
         free(line);
 		free(tmp);
 	}
+	if (info -> map_y < 3)
+		err_handler("incorrect map format");
 	info -> map_x = (ft_strlen(map) + 1) / info -> map_y - 1;
 	return (map);
 }
@@ -123,7 +125,7 @@ void	map_init(t_info *info, char *map)
 {
 	int		fd;
 
-	if (ft_strlen(map) < 5
+	if (ft_strlen(map) < 4
 		|| ft_strlen(ft_strnstr(map, ".ber", ft_strlen(map))) != 4)
 		err_handler("file extension is not .ber\n");
 	fd = open(map, O_RDONLY);
