@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 02:31:32 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/20 04:06:44 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 04:30:53 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*map_read(t_info *info, int fd)
 		info -> map_y++;
 		tmp = map;
 		map = ft_strjoin(map, line);
-        free(line);
+		free(line);
 		free(tmp);
 	}
 	if (info -> map_y < 3)
@@ -124,9 +124,12 @@ void	map_draw(t_info *info, void *mlx, void *win, char *map)
 void	map_init(t_info *info, char *map)
 {
 	int		fd;
+	char	*check;
 
-	if (ft_strlen(map) < 4
-		|| ft_strlen(ft_strnstr(map, ".ber", ft_strlen(map))) != 4)
+	check = ft_substr(map, ft_strlen(map) - 4, 4);
+	if (!check[0]
+		|| !(check[0] == '.' && check[1] == 'b'
+			&& check[2] == 'e' && check[3] == 'r'))
 		err_handler("file extension is not .ber\n");
 	fd = open(map, O_RDONLY);
 	info -> map_x = 0;
