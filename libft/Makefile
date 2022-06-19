@@ -6,11 +6,10 @@
 #    By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:30:03 by hahn              #+#    #+#              #
-#    Updated: 2021/12/13 04:57:44 by hahn             ###   ########.fr        #
+#    Updated: 2022/06/20 02:58:09 by hahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a

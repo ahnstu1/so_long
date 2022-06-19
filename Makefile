@@ -6,26 +6,34 @@
 #    By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:30:03 by hahn              #+#    #+#              #
-#    Updated: 2022/06/16 01:39:22 by hahn             ###   ########.fr        #
+#    Updated: 2022/06/20 02:54:27 by hahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
+LIBFT = libft
 NAME = so_long
-OBJS = 
+OBJS = map.o \
+		mov.o \
+		get_next_line.o \
+		get_next_line_utils.o \
+		main.o \
+		ext.o
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -curs $@ $^
+	make all -C $(LIBFT)
+	cc -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
 
 clean:
+	make clean -C $(LIBFT)
 	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
+	make fclean -C $(LIBFT)
 
 re: fclean all
 

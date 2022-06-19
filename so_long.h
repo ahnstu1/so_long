@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 04:03:42 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/18 03:25:58 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 02:40:37 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 #include "libft/libft.h"
 #include <stdio.h>
 #include <fcntl.h>
-
-char	*get_next_line(int fd);
-int		gnl_strlen(char *s);
-char	*gnl_strjoin(char *s1, char *s2);
-char	*gnl_strchr(char *s, int c);
 
 typedef struct s_info
 {
@@ -42,5 +37,15 @@ typedef struct s_info
 
 }   t_info;
 
+char	*get_next_line(int fd);
+int		gnl_strlen(char *s);
+char	*gnl_strjoin(char *s1, char *s2);
+char	*gnl_strchr(char *s, int c);
+int 	game_exit(t_info *info);
+void	mov_ply(t_info *info, int idx);
+void	clear(t_info *info);
+void	err_handler(char *msg);
+void	map_init(t_info *info, char *map);
+void	map_draw(t_info *info, void *mlx, void *win, char *map);
 
 #endif
