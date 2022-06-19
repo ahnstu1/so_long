@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 02:31:32 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/20 02:54:37 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 03:04:25 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*map_read(t_info *info, int fd)
 	char	*map;
 	char	*line;
 	char	*tmp;
-	int		y;
 
 	map = (char *)malloc(sizeof(char) * 1);
 	map[0] = '\0';

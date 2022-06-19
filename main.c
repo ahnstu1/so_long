@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 01:40:03 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/20 02:54:39 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 03:04:06 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,3 @@ int	main(int argc, char **argv)
 	mlx_hook(info -> win, 17, 0, &game_exit, info);
 	mlx_loop(info -> mlx);
 }
-
-//gcc -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit main.c get_next_line.c get_next_line_utils.c

@@ -6,7 +6,7 @@
 /*   By: hahn <hahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 02:35:27 by hahn              #+#    #+#             */
-/*   Updated: 2022/06/20 02:55:06 by hahn             ###   ########.fr       */
+/*   Updated: 2022/06/20 03:00:23 by hahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	clear(t_info *info)
 {
-	printf("Clear. Your steps : %d\n",	 ++info -> move_cnt);
+	printf("Clear. Your steps : %d\n", ++info -> move_cnt);
 	mlx_destroy_window(info -> mlx, info -> win);
 	exit(0);
 }
